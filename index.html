@@ -15,10 +15,28 @@
     <button onclick="abrirPromptContato()" style="background: white; color: black; margin-left: 10px;">Adicionar Agora</button>
 </div>
     <section id="auth-usuario" class="card">
+    <div id="login-box">
+        <h3>Entrar</h3>
         <input type="text" id="u-login-num" placeholder="Seu RA">
         <input type="password" id="u-login-pass" placeholder="Senha">
         <button onclick="loginUsuario()" class="btn-primario" style="width: 100%;">Entrar</button>
-    </section>
+        <p style="text-align: center; margin-top: 10px;">
+            Não tem conta? <a href="#" onclick="toggleAuth()" style="color: var(--primaria);">Cadastre-se</a>
+        </p>
+    </div>
+
+    <div id="cadastro-box" class="escondido">
+        <h3>Criar Conta</h3>
+        <input type="text" id="c-nome" placeholder="Nome Completo">
+        <input type="text" id="c-num" placeholder="Seu RA">
+        <input type="text" id="c-contato" placeholder="WhatsApp ou Insta">
+        <input type="password" id="c-pass" placeholder="Crie uma Senha">
+        <button onclick="cadastrarUsuario()" class="btn-primario" style="width: 100%;">Criar Conta</button>
+        <p style="text-align: center; margin-top: 10px;">
+            Já tem conta? <a href="#" onclick="toggleAuth()" style="color: var(--primaria);">Entrar</a>
+        </p>
+    </div>
+</section>
 
     <div id="area-publica" class="escondido layout-dashboard">
         <aside class="sidebar">
