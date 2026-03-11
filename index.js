@@ -1,4 +1,4 @@
-let API_BASE_URL = localStorage.getItem("API_URL") || "https://katharyn-dextrorotatory-gavin.ngrok-free.dev";
+let API_BASE_URL = localStorage.getItem("API_URL") || "https://solid-fortnight-69qq966x7p6v344xw-5000.app.github.dev";
 let todosOsProdutos = [];
 let carrinho = [];
 
