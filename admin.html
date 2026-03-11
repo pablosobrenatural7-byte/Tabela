@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Administração</h1>
+        <a href="index.html" class="btn-secundario" style="text-decoration: none;">Sair do Painel</a>
+    </header>
+
+    <div id="modal-login" class="modal">
+        <div class="modal-conteudo">
+            <h2>Acesso Restrito</h2>
+            <input type="text" id="login-user" placeholder="Usuário">
+            <input type="password" id="login-pass" placeholder="Senha">
+            <button class="btn-primario" onclick="realizarLogin()">Entrar</button>
+            <p id="msg-erro" style="color: #ff4747; margin-top: 10px;"></p>
+        </div>
+    </div>
+
+    <main id="area-admin" class="escondido">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="abrirAba(event, 'aba-gerenciar')">Gerenciar Itens</button>
+            <button class="tab-btn" onclick="abrirAba(event, 'aba-adicionar')">Novo Produto</button>
+            <button class="tab-btn" onclick="abrirAba(event, 'aba-config')">Configurações</button>
+        </div>
+
+        <div id="aba-gerenciar" class="tab-content active">
+            <table id="tabela-admin">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela-admin"></tbody>
+            </table>
+        </div>
+
+        <div id="aba-adicionar" class="tab-content">
+            <h3>Adicionar Novo Item</h3>
+            <input type="text" id="input-nome" placeholder="Nome do Produto">
+            <input type="number" id="input-preco" placeholder="Preço (Ex: 3.00)">
+            <button class="btn-primario" onclick="salvarItem()">Salvar Produto</button>
+        </div>
+
+        <div id="aba-config" class="tab-content">
+            <h3>Configuração da API</h3>
+            <p>URL do Ngrok:</p>
+            <input type="text" id="input-ngrok-url">
+            <button class="btn-aviso" onclick="salvarUrl()">Atualizar Endereço</button>
+            <hr>
+            <button class="btn-perigo" onclick="fazerLogout()">Encerrar Sessão</button>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

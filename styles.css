@@ -1,0 +1,176 @@
+:root {
+    --fundo: #121214;
+    --card: #202024;
+    --texto: #e1e1e6;
+    --primaria: #8257e5;
+    --primaria-hover: #9466ff;
+    --perigo: #e23c44;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #323238;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #323238;
+}
+
+th { background-color: #29292e; }
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+}
+
+.btn-primario { background-color: var(--primaria); }
+.btn-primario:hover { background-color: var(--primaria-hover); }
+.btn-secundario { background-color: #323238; }
+.btn-perigo { background-color: var(--perigo); margin-top: 20px;}
+.btn-aviso { background-color: #eba417; color: black; }
+
+input {
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    width: calc(100% - 22px);
+    background-color: #121214;
+    border: 1px solid #323238;
+    color: white;
+    border-radius: 5px;
+}
+
+.escondido { display: none !important; }
+
+/* Modal */
+#modal-login {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center;
+}
+.modal-conteudo {
+    background: var(--card); padding: 30px; border-radius: 8px; width: 300px;
+}
+.card-admin {
+    background: var(--card); padding: 20px; border-radius: 8px; margin-bottom: 20px;
+}
+/* Carrinho Flutuante */
+#container-carrinho {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+#btn-carrinho {
+    background: var(--primaria);
+    font-size: 1.5rem;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+#janela-carrinho {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: var(--card);
+    width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--primaria);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+#lista-carrinho {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#lista-carrinho li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #323238;
+    padding-bottom: 5px;
+}
+
+.total {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #00ff88;
+    text-align: right;
+}
+
+/* Sistema de Abas */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #323238;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: #8d8d99;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab-btn.active {
+    color: var(--primaria);
+    border-bottom: 2px solid var(--primaria);
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none; /* Esconde tudo por padrão */
+    width: 100%;
+    max-width: 800px;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block; /* Mostra só a aba ativa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
