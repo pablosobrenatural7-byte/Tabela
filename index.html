@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Atividades</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Painel de Pedidos</h1>
+        <div id="user-info">Visitante</div>
+    </header>
+<div id="aviso-contato" class="escondido" style="background: var(--perigo); color: white; padding: 10px; text-align: center;">
+    ⚠️ Você ainda não adicionou um contato (WhatsApp/Insta). 
+    <button onclick="abrirPromptContato()" style="background: white; color: black; margin-left: 10px;">Adicionar Agora</button>
+</div>
+    <section id="auth-usuario" class="card">
+        <input type="text" id="u-login-num" placeholder="Seu RA">
+        <input type="password" id="u-login-pass" placeholder="Senha">
+        <button onclick="loginUsuario()" class="btn-primario" style="width: 100%;">Entrar</button>
+    </section>
+
+    <div id="area-publica" class="escondido layout-dashboard">
+        <aside class="sidebar">
+            <h3>Categorias</h3>
+            <ul id="lista-categorias">
+                </ul>
+            <button onclick="limparTudo()" class="btn-perigo" style="margin-top: 20px; width: 100%;">Logout</button>
+        </aside>
+
+        <main class="conteudo-principal">
+            <h2 id="titulo-categoria">Selecione uma categoria</h2>
+            <table>
+                <thead>
+                    <tr><th>Atividade</th><th>Preço</th><th>Ação</th></tr>
+                </thead>
+                <tbody id="corpo-tabela-publica"></tbody>
+            </table>
+        </main>
+    </div>
+
+    <div id="container-carrinho" class="escondido">
+        <button id="btn-carrinho" onclick="toggleCarrinho()">🛒 <span id="contagem-carrinho">0</span></button>
+        <div id="janela-carrinho" class="escondido">
+            <h3>Carrinho</h3>
+            <ul id="lista-carrinho"></ul>
+            <div class="total">Total: R$ <span id="valor-total">0.00</span></div>
+            <button onclick="finalizarPedido()" class="btn-primario" style="width: 100%;">Finalizar Pedido</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

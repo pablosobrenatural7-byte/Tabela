@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Console</h1>
+        <button onclick="fazerLogout()" class="btn-perigo">Sair</button>
+    </header>
+
+    <div id="modal-login" class="card">
+        <input type="text" id="login-user" placeholder="Admin User">
+        <input type="password" id="login-pass" placeholder="Admin Password">
+        <button onclick="realizarLogin()" class="btn-primario" style="width: 100%;">Acessar</button>
+    </div>
+
+    <main id="area-admin" class="escondido">
+        <div class="card" style="max-width: 100%;">
+            <h3>Novo Item</h3>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="n-cat" placeholder="Categoria (Ex: Alura)">
+                <input type="text" id="n-nome" placeholder="Nome">
+                <input type="number" id="n-preco" placeholder="Preço" step="0.01">
+                <button onclick="salvarItem()" class="btn-primario">Salvar</button>
+            </div>
+        </div>
+        <table border="1">
+            <thead><tr><th>Cat.</th><th>Nome</th><th>Preço</th><th>Ação</th></tr></thead>
+            <tbody id="corpo-admin"></tbody>
+        </table>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>

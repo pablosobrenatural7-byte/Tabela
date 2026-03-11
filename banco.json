@@ -1,0 +1,17 @@
+[
+  {"categoria": "Tarefas", "nome": "Tarefa (Unidade)", "preco": 0.50},
+  {"categoria": "Tarefas", "nome": "Tarefa (Semanal)", "preco": 7.50},
+  {"categoria": "Tarefas", "nome": "Tarefa (Mensal)", "preco": 15.00},
+  {"categoria": "Redação", "nome": "Redação (Unidade)", "preco": 5.00},
+  {"categoria": "Redação", "nome": "Redação (3)", "preco": 10.00},
+  {"categoria": "Redação", "nome": "Redação (5)", "preco": 20.00},
+  {"categoria": "Speak", "nome": "Speak (Atividade)", "preco": 2.00},
+  {"categoria": "Speak", "nome": "Speak (Level)", "preco": 5.00},
+  {"categoria": "Matific", "nome": "Matific (Unidade Ilha de Aventura)", "preco": 3.00},
+  {"categoria": "Matific", "nome": "Matific (Unidade Trabalho Atribuído)", "preco": 5.00},
+  {"categoria": "Alura", "nome": "Alura (Completo)", "preco": 10.00},
+  {"categoria": "Avaliação Diagnóstica", "nome": "Avaliação Diagnóstica", "preco": 10.00},
+  {"categoria": "Leia SP", "nome": "Leia SP (Completar Questões)", "preco": 5.00},
+  {"categoria": "Leia SP", "nome": "Leia SP (Ler Livro)", "preco": 10.00},
+  {"categoria": "Leia SP", "nome": "Leia SP (Ler Livro e Completar Questões)", "preco": 12.50}
+]
