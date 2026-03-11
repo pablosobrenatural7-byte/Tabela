@@ -112,5 +112,34 @@ async function finalizarPedido() {
     }
 }
 
+// Alternar entre Login e Cadastro na tela
+function toggleAuth() {
+    document.getElementById("login-box").classList.toggle("escondido");
+    document.getElementById("cadastro-box").classList.toggle("escondido");
+}
+
+async function cadastrarUsuario() {
+    const nome = document.getElementById("c-nome").value;
+    const numero = document.getElementById("c-num").value;
+    const contato = document.getElementById("c-contato").value;
+    const senha = document.getElementById("c-pass").value;
+
+    if(!nome || !numero || !senha) return alert("Preencha os campos obrigatórios!");
+
+    const res = await fetch(`${API_BASE_URL}/api/cadastrar_usuario`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "ngrok-skip-browser-warning": "true" },
+        body: JSON.stringify({ nome, numero, contato, senha })
+    });
+
+    if(res.ok) {
+        alert("Conta criada! Agora faça o login.");
+        toggleAuth();
+    } else {
+        const erro = await res.json();
+        alert(erro.erro || "Erro ao cadastrar");
+    }
+}
+
 function toggleCarrinho() { document.getElementById("janela-carrinho").classList.toggle("escondido"); }
 function limparTudo() { localStorage.clear(); location.reload(); }
